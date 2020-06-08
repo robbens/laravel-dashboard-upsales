@@ -17,7 +17,7 @@ class FetchLatestSalesFromUpsalesCommand extends Command
         $this->info('Fetching Upsales data...');
 
         $upsalesApi = app(UpsalesApi::class);
-        $date = config('dashboard.tiles.upsales.total-sales.from-date');
+        $date = config('dashboard.tiles.upsales.latest-sales.from-date');
 
         if (is_numeric($date)) {
             $date = Carbon::now()->subDays($date);
