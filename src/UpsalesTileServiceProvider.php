@@ -17,10 +17,6 @@ class UpsalesTileServiceProvider extends ServiceProvider
             ]);
         }
 
-        if (! config('dashboard.tiles.upsales.token')) {
-            throw new \Exception('Upsales API token is missing.');
-        }
-
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/dashboard-upsales-tile'),
         ], 'dashboard-upsales-tile-views');
