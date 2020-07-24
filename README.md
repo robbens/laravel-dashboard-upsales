@@ -24,7 +24,7 @@ In your dashboard view.
 
 ```html
 <x-dashboard>
-    <livewire:upsales-total-sales-tile position="a1:b1" this-month />
+    <livewire:upsales-total-sales-tile position="a1:b1" />
     <livewire:upsales-latest-sales-tile position="a2:b3" limit="15" />
 </x-dashboard>
 ```
@@ -40,10 +40,10 @@ How to generate a token can be found [here](https://support.upsales.com/hc/en-us
         'upsales' => [
             'token' => 'xxxxxxxxxxxx',
             'total-sales' => [
-                'from-date' => \Carbon\Carbon::now()->firstOfMonth(), // Date in the past to fetch data from. Must be a Carbon instance
+                'from-date' => \Carbon\Carbon::now()->firstOfMonth(), // Date in the past to fetch data from. Can be a Carbon instance or days as integer
             ],
             'latest-sales' => [
-                'from-date' => \Carbon\Carbon::now()->subDays(30), // Date in the past to fetch data from. Must be a Carbon instance
+                'from-date' => \Carbon\Carbon::now()->subDays(30), // Date in the past to fetch data from. Can be a Carbon instance or days as integer
             ]
         ],
     ]   
